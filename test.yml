@@ -13,7 +13,7 @@
         range_begin: 192.168.50.5
         range_end: 192.168.50.150
         domain_name_servers: 8.8.8.8
-        routers: 192.168.50.2
+        routers: "{{ pxeserver_ip }}"
         
     pxeserver_ip: 192.168.50.2
     pxeserver_images:
@@ -24,9 +24,9 @@
         label: CentOS 7.6 1810 x86_64
 
     OS_source_path: /root/OS ## Open and Copy your Centos ISO iamge  data to /root/OS  directory.
-    OS_source_link: ftp://192.168.50.2/pub/OS  
+    OS_source_link: "ftp://{{ pxeserver_ip }}/pub/OS"  
     ks_file_location: ftp://{{pxeserver_ip}}/pub/centos7.cfg
-                    #ftp://192.168.50.2/pub/OS
+                    #ftp://{{pxeserver_ip}}/pub/OS
 
   roles:
     - tftp
