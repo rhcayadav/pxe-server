@@ -2,15 +2,15 @@
 ---
 
 pxeserver_packages:
-  - nfs-utils
+#  - nfs-utils
   - rsync
   - shim
   - syslinux
   - vsftpd
 
 pxeserver_services:
-  - rpcbind
-  - nfs-server
+#  - rpcbind
+#  - nfs-server
   - vsftpd
 
 pxeserver_files:

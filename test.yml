@@ -24,9 +24,10 @@
         label: CentOS 7.6 1810 x86_64
 
     OS_source_path: /root/OS ## Open and Copy your Centos ISO iamge  data to /root/OS  directory.
-    OS_source_link: "ftp://{{ pxeserver_ip }}/pub/OS"  
+    OS_source_link: "ftp://{{ pxeserver_ip }}/pub/OS"
+  
     ks_file_location: ftp://{{pxeserver_ip}}/pub/centos7.cfg
-                    #ftp://{{pxeserver_ip}}/pub/OS
+    #password of PXE installed OS will be "abc@1234"
 
   roles:
     - tftp

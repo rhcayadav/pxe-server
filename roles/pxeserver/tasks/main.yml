@@ -28,11 +28,8 @@
     dest: "/var/ftp/pub/centos7.cfg"
   tags: pxeserver
 
-- name: Create a symbolic link for OS source directory to ftp location
-  file:
-    src: /root/OS
-    dest: /var/ftp/pub/OS
-    state: link
+- name: sync /root/OS to  /var/ftp/pub/ , it will take time , So wait
+  synchronize: src=/root/OS dest=/var/ftp/pub/OS
 
 - name: Create directory for PXEboot related files
   file:
